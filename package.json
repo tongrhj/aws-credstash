@@ -1,51 +1,58 @@
 {
-  "name": "nodecredstash",
+  "name": "aws-credstash",
   "version": "2.0.0",
-  "description": "Node.js credstash implementation",
-  "main": "js/index.js",
+  "description": "Node.js credstash using AWS DynamoDB and KMS. Port of nodecredstash",
+  "main": "index.js",
   "engines": {
-    "node": ">=4.2.3",
-    "npm": ">=2.14.7"
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "lib",
+    "index.js",
+    "index.d.ts"
+  ],
+  "devDependencies": {
+    "aws-sdk-mock": "^5.1.0",
+    "c8": "^7.3.0",
+    "chai": "^4.2.0",
+    "chai-string": "^1.5.0",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "lodash": "^4.17.20",
+    "mocha": "^8.1.3",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "debug": "^4.1.1"
+  },
+  "peerDependencies": {
+    "aws-sdk": "^2.742.0"
   },
   "scripts": {
-    "test": "npm run lint && npm run coverage",
-    "coverage": "node ./test/mocha.js junit coverage",
-    "lint": "./node_modules/.bin/eslint ."
+    "test": "npm run lint && c8 --reporter=text mocha",
+    "watch": "mocha -w",
+    "lint": "eslint --ignore-path .gitignore . && prettier --config .prettierrc.json --ignore-path .gitignore --check \"**/*.{js,json,ts}\"",
+    "fix": "eslint --ignore-path .gitignore --fix . && prettier --config .prettierrc.json --ignore-path .gitignore --write \"**/*.{js,json,ts}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tongrhj/aws-credstash.git"
   },
   "keywords": [
     "credstash",
+    "dynamodb",
     "kms",
     "aws",
-    "node.js"
+    "node.js",
+    "secrets",
+    "credentials"
   ],
-  "author": "David Tanner",
+  "author": "Jared Tong <tongrhj@users.noreply.github.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DavidTanner/nodecredstash.git"
+  "bugs": {
+    "url": "https://github.com/tongrhj/aws-credstash/issues"
   },
-  "devDependencies": {
-    "aws-sdk-mock": "^1.7.0",
-    "chai": "4.1.2",
-    "chai-string": "^1.4.0",
-    "coveralls": "3.0.0",
-    "eslint": "4.13.1",
-    "eslint-config-airbnb": "16.1.0",
-    "eslint-config-airbnb-base": "12.1.0",
-    "eslint-plugin-chai-expect": "^1.1.1",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsx-a11y": "6.0.3",
-    "eslint-plugin-react": "7.5.1",
-    "glob": "7.1.2",
-    "istanbul": "^0.4.5",
-    "lodash": "^4.17.4",
-    "mocha": "4.0.1",
-    "mocha-junit-reporter": "1.15.0",
-    "rimraf": "2.6.2"
-  },
-  "dependencies": {
-    "aes-js": "^3.1.0",
-    "aws-sdk": "^2.171.0",
-    "debug": "^3.1.0"
-  }
+  "homepage": "https://github.com/tongrhj/aws-credstash"
 }

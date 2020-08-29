@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const chai = require('chai');
-chai.use(require('chai-string'));
+const chai = require("chai");
+chai.use(require("chai-string"));
 
 chai.config.includeStack = true;
 

@@ -1,14 +1,15 @@
-nodecredstash
-=============
+# aws-credstash
 
-[![Build Status](https://travis-ci.org/DavidTanner/nodecredstash.svg?branch=master)](https://travis-ci.org/DavidTanner/nodecredstash)
-[![Coverage Status](https://coveralls.io/repos/github/DavidTanner/nodecredstash/badge.svg?branch=master)](https://coveralls.io/github/DavidTanner/nodecredstash?branch=master)
-[![npm version](https://badge.fury.io/js/nodecredstash.svg)](https://badge.fury.io/js/nodecredstash)
-[![dependencies](https://img.shields.io/david/DavidTanner%2Fnodecredstash.svg)](https://www.npmjs.com/package/nodecredstash)
+Node.js port of [credstash](https://github.com/fugue/credstash)
 
-[Node.js](https://nodejs.org/en/) port of [credstash](https://github.com/fugue/credstash)
+Fork of [nodecredstash](https://www.npmjs.com/package/nodecredstash), largely unmodified.
 
-=============
+Main changes:
+- Added requirement of >= Node 10
+- Copied `@types/nodecredstash` into this module
+- Moved `aws-sdk` to a peerdependency: the api of the module remains unchanged, and you should be able to swap nodecredstash out for this without anything breaking.
+
+## Installation
 
     $ npm install --save nodecredstash
 
@@ -23,9 +24,9 @@ credstash.putSecret({name: 'Death Star vulnerability', secret: 'Exhaust vent', v
 ```
 
 
-Options
-=======
+## API
 
+### Options
 
 table
 -----
@@ -64,8 +65,7 @@ Options that are specific to the KMS configuration.  Defaults can still be assig
 kms here
 
 
-
-Function arguments
+Arguments
 ==================
 
 name
@@ -99,7 +99,7 @@ credstash.getSecret({
 })
 ```
 
-Functions
+API
 =========
 
 .createDdbTable([cb])
@@ -250,7 +250,3 @@ credstash.deleteSecrets({name: 'Death Star vulnerability'})
 ```js
 []
 ```
-
-
-
-

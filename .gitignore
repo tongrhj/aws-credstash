@@ -34,7 +34,3 @@ node_modules
 #OS STUFF
 .DS_Store
 .tmp
-
-
-#Test results folder
-test/results
