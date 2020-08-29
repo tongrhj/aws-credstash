@@ -1,4 +1,6 @@
-// Type definitions for nodecredstash 2.0
+// Type definitions for aws-credstash 3
+//
+// Forked from node-credtash v2.0.0 types:
 // Project: https://github.com/DavidTanner/nodecredstash
 // Definitions by: Mike Cook <https://github.com/migstopheles>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -21,7 +23,7 @@ interface CredstashContext {
 interface PutSecretOptions {
   name: string;
   secret: string;
-  context: CredstashContext;
+  context?: CredstashContext;
   digest?: string;
   version?: number;
 }
