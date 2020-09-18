@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: Automatic merge on tests passing
+    conditions:
+      - status-success=test / node-10
+      - status-success=test / node-12
+      - status-success=test / node-14
+    actions:
+      merge:
+        method: merge
