@@ -5,16 +5,16 @@ Node.js port of [credstash](https://github.com/fugue/credstash)
 Fork of [nodecredstash](https://www.npmjs.com/package/nodecredstash), largely unmodified.
 
 Main changes:
-- Added requirement of >= Node 10
+- Added requirement of >= Node 10, changed minimum version required of `aws-sdk`
 - Copied `@types/nodecredstash` into this module
-- Moved `aws-sdk` to a peerdependency: the api of the module remains unchanged, and you should be able to swap nodecredstash out for this without anything breaking.
+- Moved `aws-sdk` to a peerdependency: the API of the module remains compatible (unchanged), and you should be able to replace `nodecredstash` with `aws-credstash` without anything breaking.
 
 ## Installation
 
-    $ npm install --save nodecredstash
+    $ npm install --save aws-credstash
 
 ```js
-let Credstash = require('nodecredstash');
+let Credstash = require('aws-credstash');
 
 let credstash = new Credstash({table: 'credential-store', awsOpts: {region: 'us-west-2'}});
 
