@@ -8,9 +8,9 @@
   },
   "files": [
     "lib",
-    "index.js",
-    "index.d.ts"
+    "index.js"
   ],
+  "types": "index.d.ts",
   "devDependencies": {
     "aws-sdk-mock": "^5.1.0",
     "c8": "^7.7.1",
@@ -28,13 +28,13 @@
     "debug": "^4.3.1"
   },
   "peerDependencies": {
-    "aws-sdk": "^2.742.0"
+    "aws-sdk": "^2.171.0"
   },
   "scripts": {
     "test": "npm run lint && c8 --reporter=text mocha",
     "watch": "mocha -w",
-    "lint": "eslint --ignore-path .gitignore . && prettier --config .prettierrc.json --ignore-path .gitignore --check \"**/*.{js,json,ts}\"",
-    "fix": "eslint --ignore-path .gitignore --fix . && prettier --config .prettierrc.json --ignore-path .gitignore --write \"**/*.{js,json,ts}\""
+    "lint": "eslint --ignore-path .gitignore . && prettier --config .prettierrc.json --ignore-path .gitignore --check \"**/*.{js,json,ts,md}\"",
+    "fix": "eslint --ignore-path .gitignore --fix . && prettier --config .prettierrc.json --ignore-path .gitignore --write \"**/*.{js,json,ts,md}\""
   },
   "repository": {
     "type": "git",
