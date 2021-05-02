@@ -1,4 +1,4 @@
-// Type definitions for aws-credstash 3
+// Type definitions for aws-credstash
 //
 // Forked from node-credtash v2.0.0 types:
 // Project: https://github.com/DavidTanner/nodecredstash
