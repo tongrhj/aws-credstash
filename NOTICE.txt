@@ -8,3 +8,9 @@ Fugue credstash
 This product is a port of
 credstash (https://github.com/fugue/credstash)
 Which is licensed under Apache License, Version 2.0 (https://github.com/fugue/credstash/blob/v1.11.0/LICENSE)
+
+Nodecredstash
+
+This product is a fork of
+nodecredstash (https://github.com/DavidTanner/nodecredstash)
+which is licensed under MIT License. Copyright of nodecredstash is held by Vivint Solar, 2016.
